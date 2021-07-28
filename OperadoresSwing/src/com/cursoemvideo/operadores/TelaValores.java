@@ -43,7 +43,7 @@ public class TelaValores extends javax.swing.JFrame {
 
         jLabel2.setText("Denominador");
 
-        btnDividir.setText("Dividir");
+        btnDividir.setText("Calcular");
         btnDividir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDividirActionPerformed(evt);
@@ -54,7 +54,7 @@ public class TelaValores extends javax.swing.JFrame {
 
         lblDiv.setText("0");
 
-        jLabel5.setText("Resto");
+        jLabel5.setText("Raiz");
 
         lblRes.setText("0");
 
@@ -121,7 +121,7 @@ public class TelaValores extends javax.swing.JFrame {
         int n = Integer.parseInt(txtNum.getText());
         int d = Integer.parseInt(txtDen.getText());
         float div = n / d;
-        float res = n % d;
+        float res = (float) Math.sqrt(n);
         lblDiv.setText(Float.toString(div));
         lblRes.setText(Float.toString(res));
     }//GEN-LAST:event_btnDividirActionPerformed

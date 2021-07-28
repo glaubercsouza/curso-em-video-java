@@ -108,7 +108,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnDividir">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Dividir"/>
+        <Property name="text" type="java.lang.String" value="Calcular"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDividirActionPerformed"/>
@@ -126,7 +126,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Resto"/>
+        <Property name="text" type="java.lang.String" value="Raiz"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblRes">

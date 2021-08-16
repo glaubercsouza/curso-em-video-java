@@ -3,29 +3,31 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package programaidade;
-
-import java.util.Scanner;
+package contador01;
 
 /**
  *
  * @author User
  */
-public class ProgramaIdade {
+public class Contador01 {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.println("Qual é a sua idade?");
-        Scanner t = new Scanner(System.in);
-        int nasc = t.nextInt();
-        int i = 2015 - nasc;
-        if (i >= 18) {
-            System.out.println("Maior de idade");
-        } else {
-            System.out.println("Menor de idade");
+        int cc = 0;
+        while (cc < 10) {
+            cc++;
+            if (cc == 2 || cc == 3 || cc == 4){
+                continue;
+            }
+            if (cc == 7){
+                break;
+            }
+            System.out.println("Cambalhota " + cc);
+            
         }
     }
+    
 }

@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package contador01;
+package repeticao01;
 
 /**
  *
  * @author User
  */
-public class Contador01 {
+public class Repeticao01 {
 
     /**
      * @param args the command line arguments
@@ -17,16 +17,10 @@ public class Contador01 {
     public static void main(String[] args) {
         // TODO code application logic here
         int cc = 0;
-        while (cc < 10) {
+        do {
+            System.out.println("cambalhota");
             cc++;
-            if (cc == 2 || cc == 3 || cc == 4){
-                continue;
-            }
-            if (cc == 7){
-                break;
-            }
-            System.out.println("Cambalhota " + cc);
-        }
+        } while (cc < 4);
     }
     
 }

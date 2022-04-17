@@ -7,9 +7,8 @@ public class ContaBanco {
     private float saldo;
     private boolean status;
 
-    public ContaBanco(int numConta, String tipo, String dono) {
+    public ContaBanco(int numConta, String dono) {
         this.numConta = numConta;
-        this.tipo = tipo;
         this.dono = dono;
         this.saldo = 0;
         this.status = false;
@@ -56,49 +55,61 @@ public class ContaBanco {
         this.status = status;
     }
     
-    public void abrirConta() {
-        status = true;
-        if (tipo == "CC" || tipo == "cc") {
-            saldo = saldo + 50;
-        } else if (tipo == "CP" || tipo == "cp") {
-            saldo = saldo + 150;
+    public void abrirConta(String tipo) {
+        setTipo(tipo);
+        setStatus(true);
+        if (getTipo() == "CC" || getTipo() == "cc") {
+            setSaldo(50);
+            System.out.println("CONTA ABERTA COM SUCESSO!");
+        } else if (getTipo() == "CP" || getTipo() == "cp") {
+            setSaldo(150);
+            System.out.println("CONTA ABERTA COM SUCESSO!");
         }
     }
     
     public void fecharConta() {
-       if(saldo < 0) {
+       if(getSaldo() < 0) {
            System.out.println("Impossível fechar conta. O saldo é negativo.");
-       } else {
-           saldo = 0;
-           status = false;
-           System.out.println("CONTA FECHADA COM SUCESSO");
-       }
+       } else if(getSaldo() > 0) {
+           System.out.println("Impossível fechar a conta. Saque o dinheiro primeiro.");
+       }else {
+            setStatus(false);
+            System.out.println("CONTA FECHADA COM SUCESSO!");
+        }
     }
     
     public void depositar(int deposito) {
         if (this.status == false) {
             System.out.println("Impossível depositar. Conta está fechada.");
         } else {
-            saldo = saldo + deposito;
+            setSaldo(getSaldo() + deposito);
+            System.out.println("DEPÓSITO DE R$ " + deposito + " REALIZADO COM SUCESSO!");
         }
     }
     
     public void sacar(int saque) {
         if (status == false) {
             System.out.println("Impossível sacar. Conta está fechada.");
-        }else if (saldo < saque) {;
+        }else if (getSaldo() < saque) {;
             System.out.println("Impossível sacar. Saldo indisponível.");
         }else {
-            saldo = saldo - saque;
+            setSaldo(getSaldo() - saque);
+            System.out.println("SAQUE DE R$ " + saque + " REALIZADO COM SUCESSO!");
         }
     }
     
     public void pagarMensal() {
-        if (tipo == "CC" || tipo == "cc") {
-            saldo = saldo - 12;
+        if (isStatus()== true){
+            if (tipo == "CC" || tipo == "cc") {
+                setSaldo(getSaldo() - 12);
+                System.out.println("MENSALIDADE PAGA COM SUCESSO!");
+            }   else {
+                setSaldo(getSaldo() - 20);
+                System.out.println("MENSALIDADE PAGA COM SUCESSO!");
+            }
         } else {
-            saldo = saldo - 20;
-        }
+            System.out.println("A conta está fechada");
+        }  
     }
     
     public void status() {

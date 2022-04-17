@@ -6,10 +6,10 @@ public class Caneta {
     private String cor;
     private boolean tampada;
 
-    public Caneta(String modelo, float ponta, String cor) {
+    public Caneta(String modelo, String cor, float ponta) {
         this.modelo = modelo;
-        this.ponta = ponta;
         this.cor = cor;
+        this.ponta = ponta;
     }
 
     public String getModelo() {
@@ -44,5 +44,10 @@ public class Caneta {
         this.tampada = tampada;
     }
     
+    public void status() {
+        System.out.println("A caneta é: " + getCor());
+        System.out.println("De ponta: " + getPonta());
+        System.out.println("E cor: " + getCor());
+    }
    
 }

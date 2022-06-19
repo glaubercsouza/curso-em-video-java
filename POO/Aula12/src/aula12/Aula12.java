@@ -17,8 +17,7 @@ public class Aula12 {
         Goldfish g = new Goldfish();
         Arara e = new Arara();
           
-        c.emitirSom();
-        k.emitirSom();
+        k.reagir(11, 45);
     }
     
 }

@@ -32,7 +32,9 @@ public class Video implements AcoesVideo {
     }
     
     public void setAvaliacao(int avaliacao) {
-        this.avaliacao = avaliacao;
+        int nova;
+        nova =(int)(this.avaliacao + avaliacao) / getViews();
+        this.avaliacao = nova;
     }
     
     public int getViews() {
@@ -61,17 +63,17 @@ public class Video implements AcoesVideo {
 
     @Override
     public void play() {
-
+        setReproduzindo(true);
     }
 
     @Override
     public void pause() {
-
+        setReproduzindo(false);
     }
 
     @Override
     public void like() {
-
+        setCurtidas(getCurtidas() + 1);
     }
 
     @Override
